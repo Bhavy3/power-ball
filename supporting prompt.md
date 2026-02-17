@@ -1,298 +1,401 @@
-SCIENTIFIC EVALUATION & STABILITY LAYER (SEASL+)
+MASTER PROMPT — FULL SYSTEM UPGRADE (RESEARCH-GRADE VERSION)
 
-Non-destructive. Deterministic. Fully guarded.
+You are upgrading the existing Up Skill Hub Prediction Engine into a Research-Grade Probabilistic Optimization & Evaluation Framework.
 
-🔒 GLOBAL SYSTEM CONSTRAINTS
+⚠️ DO NOT break existing functionality.
+⚠️ DO NOT remove working logic.
+⚠️ All new features must be modular and optional.
+⚠️ Backward compatibility is mandatory.
 
-Core generator must remain untouched.
+🎯 OBJECTIVES
 
-Audit logic must remain untouched.
+Add full transparency & inspection capabilities
 
-predictions.csv schema must remain untouched.
+Add multi-baseline comparison
 
-All evaluation functions must fail safely (never crash workflow).
+Add visualization-ready output
 
-All statistical operations must be deterministic when seed provided.
+Add experiment modes
 
-All missing-data conditions must degrade gracefully.
+Add unified CLI control
 
-📁 FILE INTEGRITY VALIDATION PHASE (NEW)
+Add full reporting system
 
-Before any evaluation:
+Ensure deterministic reproducibility (seeded)
 
-Implement:
+🧠 ARCHITECTURE REQUIREMENTS
+1️⃣ Create Central CLI Controller
 
-def validate_input_files():
+Create a new file:
 
+cli_controller.py
 
-Check:
 
-predictions.csv exists
+This file must allow:
 
-historical_draws.csv exists
+python cli_controller.py --engine
+python cli_controller.py --test
+python cli_controller.py --audit
+python cli_controller.py --evaluate
+python cli_controller.py --full-report
 
-Both non-empty
 
-Required columns present
+Each command must run independently.
 
-No NaN in prediction numbers
+2️⃣ Engine Mode
 
-No duplicate tickets in same run
+When running:
 
-Edge Handling:
+--engine
 
-If file missing:
-Return status = "FILE_MISSING"
-Skip evaluation
-Log warning
 
-If empty:
-Return status = "EMPTY_DATA"
-Skip evaluation
+It must:
 
-If corrupted schema:
-Return status = "INVALID_SCHEMA"
-Skip evaluation
+Generate tickets
 
-Evaluation must NEVER stop workflow.
+Show entropy
 
-📊 PHASE 1 — ROLLING METRICS (FULL EDGE CONTROL)
+Show number distribution table
 
-Function:
+Show frequency spread
 
-def compute_rolling_metrics(run_history, window_size=30):
+Show coverage analysis
 
+Show top-used numbers
 
-Edge cases:
+Show least-used numbers
 
-If run_history is None:
-return status="NO_HISTORY"
+Display seed used
 
-If len(run_history) == 0:
-return:
-mean=None
-std=None
-ci=None
-status="ZERO_SAMPLE"
+All outputs must be cleanly formatted and structured.
 
-If 1 ≤ n < 10:
-Compute mean
-std = None
-ci = None
-status="LOW_SAMPLE_WARNING"
+3️⃣ Test Mode
 
-If n ≥ 10:
-Use unbiased std (n-1)
-CI = mean ± 1.96 * (std / sqrt(n))
+When running:
 
-All divisions must check denominator ≠ 0.
+--test
 
-If std == 0:
-CI = mean ± 0
-status="NO_VARIANCE"
 
-🎲 PHASE 2 — MONTE CARLO (REPRODUCIBLE)
+It must:
 
-Function:
+Run evaluation_tests.py
 
-def monte_carlo_batch_simulation(ticket_count,
-                                 simulations=100000,
-                                 seed=42):
+Show PASS/FAIL clearly
 
+Show entropy validation
 
-Rules:
+Show Monte Carlo validation
 
-random.seed(seed)
+Show variance validation
 
-numpy.random.seed(seed)
+Show reproducibility check (seed=42)
 
-Use only uniform sampling
+Output must be grouped by:
 
-No historical weighting
+TEST GROUP:
+  ✔ Entropy Test
+  ✔ Monte Carlo Test
+  ✔ Variance Test
 
-If ticket_count == 0:
-return status="NO_TICKETS"
+4️⃣ Audit Mode
 
-If simulations < 1000:
-raise ValueError("Simulations too low for statistical stability")
+When running:
 
-After simulation:
+--audit
 
-Return:
 
-{
-baseline_mean,
-baseline_std,
-percentile_rank,
-p_value,
-seed_used
-}
+It must:
 
-p_value calculation:
+Run audit_engine
 
-p = proportion of simulations >= actual_rate
+Show:
 
-This ensures full reproducibility.
+3+ rate
 
-📉 PHASE 3 — VARIANCE DETECTOR (SAFE DIVISION)
+4+ rate
 
-If rolling_std is None or 0:
-z = 0
-phase = "INSUFFICIENT_VARIANCE"
+Ticket count
 
-Else:
-z = (current - mean) / std
+Historical comparison
 
-Absolute threshold rules unchanged.
+Coverage vs actual
 
-🔐 PHASE 4 — ENTROPY (BIAS-AWARE)
+Append to .audit_history.json
 
-We do NOT assume uniform historical distribution.
+Confirm append success
 
-Implement:
+5️⃣ Evaluation Mode
 
-def compute_historical_distribution(draws):
+When running:
 
+--evaluate
 
-Steps:
 
-Validate draw continuity.
+It must run:
 
-If date gaps > expected frequency:
-Flag as DATA_GAP_WARNING.
+seasl_evaluation.py
 
-Build empirical frequency distribution.
+And show:
 
-Normalize probabilities.
+History entries
 
-If historical dataset size < 200 draws:
-Flag: HISTORICAL_SAMPLE_WEAK
+Rolling mean
 
-Entropy:
+Confidence interval
 
-H = - Σ p(x) log2 p(x)
+Monte Carlo percentile
 
-If any p(x) == 0:
-Exclude from entropy sum (standard Shannon handling).
+p-value
 
-Guardrail rule:
+Variance phase
 
-If |H_pred − H_hist| > 0.15:
-status="ENTROPY_DRIFT"
+Entropy drift
 
-If historical flagged weak:
-entropy status="LOW_CONFIDENCE"
+Adaptive status
 
-⚙️ PHASE 5 — ADAPTIVE CONTROLLER (HARD BOUNDS)
+Seed used
 
-Additional constraints:
+Data integrity flags
 
-Maintain parameter log file.
+All neatly aligned.
 
-Store baseline defaults.
+6️⃣ FULL REPORT MODE (Critical)
 
-Each change requires:
+When running:
 
-rolling sample ≥ 30
+--full-report
 
-percentile rank < 40% for 3 consecutive windows
 
-Max lifetime drift per parameter = 5% total.
+It must sequentially execute:
 
-Automatic reversion if percentile < 30% for 5 runs after change.
+Engine
 
-No cascading adjustments allowed.
+Audit
 
-Only 1 parameter adjustment per 10 runs.
+Evaluation
 
-🧪 PHASE 6 — VALIDATION & TEST HARNESS (NEW)
+Baseline comparison
 
-Create file:
+Then produce one consolidated output:
 
-evaluation_tests.py
+========================
+ FULL SYSTEM REPORT
+========================
+ENGINE SECTION
+AUDIT SECTION
+EVALUATION SECTION
+BASELINE SECTION
+SYSTEM HEALTH SECTION
 
-Include deterministic test stubs:
 
-Test 1 — Zero history:
-Input: []
-Expected:
-status="ZERO_SAMPLE"
+This must show:
 
-Test 2 — Single value:
-Input: [0.20]
-Expected:
-mean=0.20
-std=None
-status="LOW_SAMPLE_WARNING"
+Distribution table
 
-Test 3 — Deterministic Monte Carlo:
-Call twice with seed=42
-Expected:
-identical baseline_mean
-identical percentile
+Entropy drift
 
-Test 4 — Entropy sanity:
-Uniform distribution test:
-H should equal log2(N)
+Rolling stats
 
-Test 5 — Variance detector:
-Input:
-mean=0.03
-std=0.01
-current=0.05
-Expected:
-z=2.0
-phase="STRONG_POSITIVE"
+Baseline comparison
 
-All tests must pass before production activation.
+Random baseline comparison
 
-📊 FINAL REPORT STRUCTURE
-SCIENTIFIC EVALUATION REPORT
-----------------------------
-File Status: OK / ERROR
-Rolling Sample Size: N
-Rolling Mean (3+): X%
-95% CI: [L, U]
-Monte Carlo Percentile: X%
-Monte Carlo p-value: X
-Variance Phase: LABEL
-Entropy Status: LABEL
-Adaptive Status: ON/OFF
-Data Integrity Flags: [...]
-Seed Used: 42
+Frequency-weighted baseline
 
+Coverage baseline
 
-If any critical failure:
-Evaluation skipped safely.
+Experiment mode active
 
-🚫 STRICT MATHEMATICAL GUARANTEES
+Seed used
 
-Unbiased variance estimator
+Config parameters used
 
-Deterministic Monte Carlo
+Everything in one clean console view.
 
-No division by zero
+📊 BASELINE COMPARISON MODULE
 
-No silent NaN propagation
+Create new file:
 
-No parameter drift without statistical basis
+baseline_comparison.py
 
-All randomness reproducible
 
-All adjustments logged
+It must compare:
 
-🧠 DESIGN PHILOSOPHY
+Pure random baseline
 
-This layer:
+Frequency-weighted baseline
 
-Does not chase variance.
+Coverage-optimized baseline
 
-Does not assume predictability.
+Current engine
 
-Does not overreact.
+Output:
 
-Does not break reproducibility.
+ENGINE vs RANDOM
+ENGINE vs WEIGHTED
+ENGINE vs COVERAGE
 
-Does not modify core engine.
 
-It is an evaluation microscope, not a prediction enhancer.
+With:
+
+3+ rate
+
+Entropy
+
+Overlap score
+
+Monte Carlo percentile
+
+🔬 EXPERIMENT MODES
+
+Add to config:
+
+mode: "balanced" | "exploration" | "exploitation"
+
+
+Balanced:
+Entropy target 4.9–5.1
+
+Exploration:
+Entropy target >5.1
+
+Exploitation:
+Entropy target 4.6–4.8
+
+Mode must not break system if missing.
+
+🧪 SIMULATION HARNESS
+
+Create:
+
+simulation_runner.py
+
+
+Allows:
+
+python cli_controller.py --simulate 1000
+
+
+It must:
+
+Run 1000 simulated historical draws
+
+Compare engine vs random
+
+Output statistical significance
+
+Output long-run confidence interval
+
+Use fixed seed
+
+📈 VISUALIZATION EXPORT
+
+Create optional:
+
+report_export.py
+
+
+Allow:
+
+python cli_controller.py --export-report
+
+
+Generate:
+
+CSV summary
+
+JSON summary
+
+Optional matplotlib charts
+
+Save as report_output/
+
+Must not use seaborn.
+Must not specify colors.
+
+🧾 SYSTEM HEALTH CHECK
+
+When running:
+
+--health
+
+
+It must show:
+
+File existence
+
+JSON integrity
+
+History file validity
+
+Config validity
+
+Seed consistency
+
+Data shape validation
+
+Missing values detection
+
+Output:
+
+SYSTEM STATUS: HEALTHY
+
+
+or detailed warnings.
+
+🔐 STRICT RULES
+
+No file duplication of history.
+
+No hardcoded parameters.
+
+All randomness must use seeded generator.
+
+All new modules must be import-safe.
+
+No circular imports.
+
+No breaking existing tests.
+
+All numeric outputs formatted to 4 decimal places.
+
+All console output neatly aligned.
+
+Handle n=0 safely.
+
+All Monte Carlo must use random.seed(42).
+
+📦 FINAL STRUCTURE EXPECTED
+
+Your project should now allow:
+
+python cli_controller.py --engine
+python cli_controller.py --audit
+python cli_controller.py --evaluate
+python cli_controller.py --full-report
+python cli_controller.py --simulate 1000
+python cli_controller.py --health
+python cli_controller.py --test
+
+
+With clean separation of concerns.
+
+🎯 END RESULT
+
+You will now have:
+
+Research-grade architecture
+
+Fully inspectable engine
+
+Deterministic reproducibility
+
+Statistical governance
+
+Baseline benchmarking
+
+Simulation validation
+
+CV-level engineering depth
+
+Recruiter-impressive structure
