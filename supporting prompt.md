@@ -1,401 +1,332 @@
-MASTER PROMPT — FULL SYSTEM UPGRADE (RESEARCH-GRADE VERSION)
+MASTER PROMPT — ADVANCED FLASHY UI (CASINO-STYLE DASHBOARD)
 
-You are upgrading the existing Up Skill Hub Prediction Engine into a Research-Grade Probabilistic Optimization & Evaluation Framework.
+You are building a high-end interactive web interface for the Up Skill Hub Statistical Optimization Engine.
 
-⚠️ DO NOT break existing functionality.
-⚠️ DO NOT remove working logic.
-⚠️ All new features must be modular and optional.
-⚠️ Backward compatibility is mandatory.
+⚠️ DO NOT modify backend logic.
+⚠️ Backend must remain pure Python modules.
+⚠️ UI must call backend via API.
+⚠️ All functionality discussed in previous conversation must be accessible through UI.
 
-🎯 OBJECTIVES
+🏗 SYSTEM ARCHITECTURE
+Backend
 
-Add full transparency & inspection capabilities
+FastAPI server (api_server.py)
 
-Add multi-baseline comparison
+Endpoints for:
 
-Add visualization-ready output
+/engine
 
-Add experiment modes
+/audit
 
-Add unified CLI control
+/evaluate
 
-Add full reporting system
+/history
 
-Ensure deterministic reproducibility (seeded)
+/full-report
 
-🧠 ARCHITECTURE REQUIREMENTS
-1️⃣ Create Central CLI Controller
+/simulate
 
-Create a new file:
+/health
 
-cli_controller.py
+/test
 
+Backend must return JSON only.
 
-This file must allow:
+Frontend
 
-python cli_controller.py --engine
-python cli_controller.py --test
-python cli_controller.py --audit
-python cli_controller.py --evaluate
-python cli_controller.py --full-report
+React + Vite
+TailwindCSS for styling
+Framer Motion for animations
+Chart.js or Recharts for charts
 
+Design must resemble modern gambling dashboards:
+Dark theme, neon glow accents, smooth animations, dynamic elements.
 
-Each command must run independently.
+🎰 UI DESIGN REQUIREMENTS
+🎡 Landing Page — Animated Draw Arena
 
-2️⃣ Engine Mode
+3D rolling balls animation (lottery style)
 
-When running:
+Animated spinning number capsules
 
---engine
+Glowing hover effects
 
+Live entropy meter (circular animated gauge)
 
-It must:
+Rolling seed indicator
 
-Generate tickets
+Animated particle background
 
-Show entropy
+When "Generate" clicked:
 
-Show number distribution table
+Balls spin
 
-Show frequency spread
+Numbers pop out one by one with bounce animation
 
-Show coverage analysis
+Sound effect support optional
 
-Show top-used numbers
+🧠 ENGINE DASHBOARD
 
-Show least-used numbers
+Display:
 
-Display seed used
+Animated number tiles
 
-All outputs must be cleanly formatted and structured.
+Heatmap of number frequency
 
-3️⃣ Test Mode
+Entropy gauge (circular progress)
 
-When running:
+Coverage radar chart
 
---test
+Most-used / least-used number cards
 
+Overlap visualization
 
-It must:
+Seed indicator badge
 
-Run evaluation_tests.py
+Mode badge (Balanced / Exploration / Exploitation)
 
-Show PASS/FAIL clearly
+Add animated transitions when switching modes.
 
-Show entropy validation
-
-Show Monte Carlo validation
-
-Show variance validation
-
-Show reproducibility check (seed=42)
-
-Output must be grouped by:
-
-TEST GROUP:
-  ✔ Entropy Test
-  ✔ Monte Carlo Test
-  ✔ Variance Test
-
-4️⃣ Audit Mode
-
-When running:
-
---audit
-
-
-It must:
-
-Run audit_engine
+📊 AUDIT DASHBOARD
 
 Show:
 
-3+ rate
+3+ rate with animated counter
 
-4+ rate
+4+ rate with animated counter
 
-Ticket count
+Historical comparison arrow indicators (↑ ↓)
 
-Historical comparison
+Last 10 runs table
 
-Coverage vs actual
+Trend line chart
 
-Append to .audit_history.json
+Rolling mean chart
 
-Confirm append success
+Monte Carlo percentile bar animation
 
-5️⃣ Evaluation Mode
+Include neon status badges:
 
-When running:
+PASS
 
---evaluate
+WARNING
 
+DRIFT
 
-It must run:
+HOLD
 
-seasl_evaluation.py
+🔬 EVALUATION LAB
 
-And show:
+Must show:
 
-History entries
+Rolling sample size
 
-Rolling mean
+Confidence interval band chart
 
-Confidence interval
+Entropy drift visual (dual bar comparison)
 
-Monte Carlo percentile
+Variance phase indicator
 
-p-value
+Adaptive status animation
 
-Variance phase
+p-value gauge
 
-Entropy drift
+Monte Carlo percentile meter
 
-Adaptive status
+Data integrity flags with alert icons
 
-Seed used
+Use animated reveal effects.
 
-Data integrity flags
+📈 HISTORY ANALYTICS CENTER
 
-All neatly aligned.
+Interactive:
 
-6️⃣ FULL REPORT MODE (Critical)
+Scrollable timeline
 
-When running:
+Animated graph updates
 
---full-report
+Zoomable chart
 
+Filtering by date
 
-It must sequentially execute:
+Toggle 3+ / 4+ rates
 
-Engine
+Export to CSV button
 
-Audit
+Simulation overlay comparison
 
-Evaluation
+🧪 SIMULATION ARENA
 
-Baseline comparison
+Input:
 
-Then produce one consolidated output:
+Number of simulations
 
-========================
- FULL SYSTEM REPORT
-========================
-ENGINE SECTION
-AUDIT SECTION
-EVALUATION SECTION
-BASELINE SECTION
-SYSTEM HEALTH SECTION
+Show:
 
+Progress bar animation
 
-This must show:
+Engine vs Random comparison
 
-Distribution table
+Statistical significance indicator
 
-Entropy drift
+Confidence interval visual
 
-Rolling stats
+Probability distribution curve
 
-Baseline comparison
+Histogram chart
 
-Random baseline comparison
+All animated on completion.
 
-Frequency-weighted baseline
+📦 FULL SYSTEM REPORT VIEW
 
-Coverage baseline
+Single button: “Run Full Analysis”
 
-Experiment mode active
+Must:
 
-Seed used
+Sequentially animate sections loading
 
-Config parameters used
+Show engine results
 
-Everything in one clean console view.
+Show audit results
 
-📊 BASELINE COMPARISON MODULE
+Show evaluation results
 
-Create new file:
+Show baseline comparison
 
-baseline_comparison.py
+Show system health
 
+Include loading spinner animation between phases.
 
-It must compare:
+⚙ SYSTEM HEALTH PANEL
 
-Pure random baseline
+Show:
 
-Frequency-weighted baseline
+File integrity status
 
-Coverage-optimized baseline
+History file status
 
-Current engine
-
-Output:
-
-ENGINE vs RANDOM
-ENGINE vs WEIGHTED
-ENGINE vs COVERAGE
-
-
-With:
-
-3+ rate
-
-Entropy
-
-Overlap score
-
-Monte Carlo percentile
-
-🔬 EXPERIMENT MODES
-
-Add to config:
-
-mode: "balanced" | "exploration" | "exploitation"
-
-
-Balanced:
-Entropy target 4.9–5.1
-
-Exploration:
-Entropy target >5.1
-
-Exploitation:
-Entropy target 4.6–4.8
-
-Mode must not break system if missing.
-
-🧪 SIMULATION HARNESS
-
-Create:
-
-simulation_runner.py
-
-
-Allows:
-
-python cli_controller.py --simulate 1000
-
-
-It must:
-
-Run 1000 simulated historical draws
-
-Compare engine vs random
-
-Output statistical significance
-
-Output long-run confidence interval
-
-Use fixed seed
-
-📈 VISUALIZATION EXPORT
-
-Create optional:
-
-report_export.py
-
-
-Allow:
-
-python cli_controller.py --export-report
-
-
-Generate:
-
-CSV summary
-
-JSON summary
-
-Optional matplotlib charts
-
-Save as report_output/
-
-Must not use seaborn.
-Must not specify colors.
-
-🧾 SYSTEM HEALTH CHECK
-
-When running:
-
---health
-
-
-It must show:
-
-File existence
-
-JSON integrity
-
-History file validity
-
-Config validity
+Config validation
 
 Seed consistency
 
-Data shape validation
+Missing file alerts
 
-Missing values detection
+Green glowing indicators for OK
+Red flashing for issues
 
-Output:
+🎨 VISUAL STYLE RULES
 
-SYSTEM STATUS: HEALTHY
+Dark background (#0f172a style)
 
+Neon accent (cyan / purple glow)
 
-or detailed warnings.
+Soft shadows
 
-🔐 STRICT RULES
+Rounded corners
 
-No file duplication of history.
+Glassmorphism panels
 
-No hardcoded parameters.
+Smooth hover animations
 
-All randomness must use seeded generator.
+Animated number transitions
 
-All new modules must be import-safe.
+Responsive layout
 
-No circular imports.
+No clutter
 
-No breaking existing tests.
+🧠 UX PRINCIPLES
 
-All numeric outputs formatted to 4 decimal places.
+No reload required
 
-All console output neatly aligned.
+Real-time updates
 
-Handle n=0 safely.
+All API calls async
 
-All Monte Carlo must use random.seed(42).
+Loading states for every action
 
-📦 FINAL STRUCTURE EXPECTED
+Clear section separation
 
-Your project should now allow:
+Tooltip explanations for metrics
 
-python cli_controller.py --engine
-python cli_controller.py --audit
-python cli_controller.py --evaluate
-python cli_controller.py --full-report
-python cli_controller.py --simulate 1000
-python cli_controller.py --health
-python cli_controller.py --test
+Toggle between “Simple View” and “Advanced View”
 
+🔐 TECHNICAL RULES
 
-With clean separation of concerns.
+No business logic in frontend
 
-🎯 END RESULT
+All stats calculated backend-side
 
-You will now have:
+All randomness seeded
 
-Research-grade architecture
+API error handling required
 
-Fully inspectable engine
+Modular components
 
-Deterministic reproducibility
+No duplicated data sources
 
-Statistical governance
+Clean folder structure:
 
-Baseline benchmarking
+backend/
+frontend/
+components/
+services/
+charts/
+animations/
 
-Simulation validation
+🚀 DEPLOYMENT READY
 
-CV-level engineering depth
+Must be deployable via:
 
-Recruiter-impressive structure
+Docker
+
+Render
+
+Railway
+
+Vercel (frontend)
+
+FastAPI server separately
+
+Include:
+
+requirements.txt
+
+package.json
+
+README setup instructions
+
+🎯 FINAL RESULT
+
+This UI should feel like:
+
+A premium online betting dashboard
+
+A live statistical control center
+
+A research analytics platform
+
+A visually impressive portfolio project
+
+Not just a number generator.
+
+🏆 Why This Is Powerful For You
+
+When a recruiter opens this:
+
+They don’t see “lottery predictor”.
+
+They see:
+
+Backend engineering
+
+API design
+
+Frontend animation
+
+Statistical modeling
+
+Visualization mastery
+
+Product thinking
+
+That’s top-tier portfolio material.

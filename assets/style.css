@@ -1,0 +1,291 @@
+/* 
+   PREMIUM GLASSMORPHISM & NEON THEME
+   For Up Skill Hub Statistical Optimization Engine
+*/
+
+/* 1. Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* 2. Global Variables */
+:root {
+    --bg-dark: #0f172a;
+    --glass-bg: rgba(30, 41, 59, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --neon-cyan: #00f3ff;
+    --neon-purple: #bc13fe;
+    --neon-green: #0aff68;
+    --neon-red: #ff0055;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+}
+
+/* 3. Base Streamlit Overrides */
+.stApp {
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 20%);
+    font-family: 'Outfit', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif !important;
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p,
+span,
+div {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-secondary);
+}
+
+.stMarkdown code {
+    font-family: 'JetBrains Mono', monospace !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    color: var(--neon-cyan) !important;
+}
+
+/* 4. Glassmorphism Panels */
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation-delay: 0.1s;
+    /* Stagger effect base */
+    animation-fill-mode: forwards;
+}
+
+.glass-panel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* 5. Neon Metrics */
+.metric-container {
+    text-align: center;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+
+.metric-purple {
+    text-shadow: 0 0 15px rgba(188, 19, 254, 0.6);
+    color: #e9d5ff;
+}
+
+.metric-cyan {
+    text-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+    color: #cffafe;
+}
+
+.metric-green {
+    text-shadow: 0 0 15px rgba(10, 255, 104, 0.6);
+    color: #dcfce7;
+}
+
+.metric-red {
+    text-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
+    color: #fee2e2;
+}
+
+/* 6. Animated "Ball" Numbers */
+.lotto-ball {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #475569, #1e293b);
+    border: 2px solid var(--glass-border);
+    color: white;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    animation: bounceIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, pulseGlow 3s infinite;
+}
+
+.powerball-orb {
+    background: radial-gradient(circle at 30% 30%, #be123c, #881337);
+    border: 2px solid rgba(255, 0, 85, 0.3);
+    box-shadow: 0 0 20px rgba(255, 0, 85, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+    animation: bounceIn 0.6s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, pulseRed 2s infinite;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0) translateY(50px);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.1) translateY(-10px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 5px 25px rgba(0, 243, 255, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    }
+
+    100% {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5), inset 0 2px 5px rgba(255, 255, 255, 0.2);
+    }
+}
+
+@keyframes pulseRed {
+    0% {
+        box-shadow: 0 0 20px rgba(255, 0, 85, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(255, 0, 85, 0.6), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+    }
+
+    100% {
+        box-shadow: 0 0 20px rgba(255, 0, 85, 0.4), inset 0 2px 5px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* 6b. Advanced Entry Animations */
+.glass-panel {
+    animation: slideUp 0.5s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Rolling / Slot Machine Animation */
+.rolling {
+    animation: rollInOut 0.1s infinite linear;
+    filter: blur(1px);
+    color: var(--neon-cyan);
+}
+
+@keyframes rollInOut {
+    0% {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
+
+/* 7. Button Styling */
+.stButton>button {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.1), rgba(188, 19, 254, 0.1));
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    border-radius: 8px;
+    font-family: 'Outfit', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(135deg, rgba(0, 243, 255, 0.2), rgba(188, 19, 254, 0.2));
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.stButton>button:active {
+    transform: translateY(1px);
+}
+
+/* 8. Dataframes & Tables */
+.stDataFrame {
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* 9. Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #020617;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 10. Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-pass {
+    background: rgba(10, 255, 104, 0.2);
+    color: #86efac;
+    border: 1px solid rgba(10, 255, 104, 0.3);
+}
+
+.status-warn {
+    background: rgba(255, 180, 0, 0.2);
+    color: #fcd34d;
+    border: 1px solid rgba(255, 180, 0, 0.3);
+}
+
+.status-fail {
+    background: rgba(255, 0, 85, 0.2);
+    color: #fda4af;
+    border: 1px solid rgba(255, 0, 85, 0.3);
+}

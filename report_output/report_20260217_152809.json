@@ -1,0 +1,103 @@
+{
+    "status": "SUCCESS",
+    "analysis_date": "2026-02-17T15:28:09.739278",
+    "total_predictions_evaluated": 5,
+    "data_health": {
+        "predictions_loaded": 5,
+        "predictions_rejected": 0,
+        "actuals_loaded": 1837,
+        "actuals_rejected": 0,
+        "parse_error_count": 0,
+        "parse_errors": [],
+        "assertion_status": "PASSED",
+        "audit_confidence": "HIGH"
+    },
+    "accuracy_distribution": {
+        "0_matches": {
+            "count": 4,
+            "pct": 80.0
+        },
+        "1_matches": {
+            "count": 1,
+            "pct": 20.0
+        },
+        "2_matches": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "3_matches": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "4_matches": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "5_matches": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "6_matches": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "powerball_only": {
+            "count": 1,
+            "pct": 20.0
+        },
+        "2_plus": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "3_plus": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "4_plus": {
+            "count": 0,
+            "pct": 0.0
+        },
+        "3_plus_pct": 0.0
+    },
+    "random_baseline": {
+        "0_matches": "35.0383%",
+        "1_matches": "43.4958%",
+        "2_matches": "18.1233%",
+        "3_matches": "3.1180%",
+        "4_matches": "0.2192%",
+        "5_matches": "0.0053%",
+        "6_matches": "0.0000%",
+        "powerball_only": "10.0000%",
+        "2_plus_matches": "21.4658%",
+        "3_plus_matches": "3.3426%",
+        "4_plus_matches": "0.2246%"
+    },
+    "deviation_from_random": {
+        "2_plus": {
+            "actual_pct": 0.0,
+            "random_pct": 21.46582672898462,
+            "deviation_pct": -21.46582672898462
+        },
+        "3_plus": {
+            "actual_pct": 0.0,
+            "random_pct": 3.342555974134922,
+            "deviation_pct": -3.342555974134922
+        },
+        "4_plus": {
+            "actual_pct": 0.0,
+            "random_pct": 0.2245739087844351,
+            "deviation_pct": -0.2245739087844351
+        }
+    },
+    "verdict": {
+        "category": "INCONCLUSIVE (insufficient data)",
+        "confidence": "LOW",
+        "reason": "Only 5 draws evaluated. Results dominated by noise"
+    },
+    "sample_size_check": {
+        "total_draws": 5,
+        "confidence_limit": "LOW",
+        "category_limit": "INCONCLUSIVE",
+        "noise_warning": "Results dominated by noise"
+    }
+}
