@@ -3,7 +3,7 @@
   "current_values": {},
   "change_history": [],
   "total_drift_pct": {},
-  "runs_since_last_change": 18,
+  "runs_since_last_change": 19,
   "consecutive_low_percentile": 0,
   "runs_since_change_for_revert": 0
 }
