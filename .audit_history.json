@@ -1733,6 +1733,259 @@
       "three_plus_rate": 0.0,
       "four_plus_rate": 0.0,
       "ticket_count": 5
+    },
+    {
+      "run_id": "2e1a1e7b",
+      "timestamp": "2026-02-18T11:26:27.487590",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:27.526479",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 10
+    },
+    {
+      "run_id": "a049924f",
+      "timestamp": "2026-02-18T11:26:34.282959",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:34.341199",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "168af527",
+      "timestamp": "2026-02-18T11:26:37.063101",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:37.121934",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "dcb7bada",
+      "timestamp": "2026-02-18T11:26:38.931625",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:38.993949",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "8e84a125",
+      "timestamp": "2026-02-18T11:26:40.464303",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:40.534489",
+      "three_plus_rate": 0.04,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "0cc4e9e7",
+      "timestamp": "2026-02-18T11:26:47.914549",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:47.974448",
+      "three_plus_rate": 0.04,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "3e7d1e9e",
+      "timestamp": "2026-02-18T11:26:51.157574",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:51.218394",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "c7dbd04a",
+      "timestamp": "2026-02-18T11:26:59.707419",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:56:59.768055",
+      "three_plus_rate": 0.04,
+      "four_plus_rate": 0.0,
+      "ticket_count": 25
+    },
+    {
+      "run_id": "bbd5dd7d",
+      "timestamp": "2026-02-18T11:27:02.787735",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:02.833267",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 10
+    },
+    {
+      "run_id": "e3f060c0",
+      "timestamp": "2026-02-18T11:27:04.491051",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:04.536189",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 10
+    },
+    {
+      "run_id": "3d00e014",
+      "timestamp": "2026-02-18T11:27:06.047884",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:06.093990",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 10
+    },
+    {
+      "run_id": "4014907e",
+      "timestamp": "2026-02-18T11:27:11.759018",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:11.800324",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "2c6182e7",
+      "timestamp": "2026-02-18T11:27:13.955838",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:13.994462",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "c9360fd1",
+      "timestamp": "2026-02-18T11:27:15.556145",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:15.595506",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "289bb228",
+      "timestamp": "2026-02-18T11:27:17.157755",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:17.197328",
+      "three_plus_rate": 0.3333333333333333,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "f96c312d",
+      "timestamp": "2026-02-18T11:27:27.468040",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:27.509027",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "bf3224e8",
+      "timestamp": "2026-02-18T11:27:39.711786",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:39.752815",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
+    },
+    {
+      "run_id": "818db52c",
+      "timestamp": "2026-02-18T11:27:47.655484",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:47.697872",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
+    },
+    {
+      "run_id": "9419d96a",
+      "timestamp": "2026-02-18T11:27:49.802304",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:49.843158",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
+    },
+    {
+      "run_id": "7d099d8c",
+      "timestamp": "2026-02-18T11:27:51.478235",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:51.519500",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
+    },
+    {
+      "run_id": "50e89f60",
+      "timestamp": "2026-02-18T11:27:52.864133",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:52.906164",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
+    },
+    {
+      "run_id": "ac4fe52d",
+      "timestamp": "2026-02-18T11:27:54.301525",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:57:54.345987",
+      "three_plus_rate": 0.2,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
+    },
+    {
+      "run_id": "9da93ce2",
+      "timestamp": "2026-02-18T11:28:05.975441",
+      "success": true
+    },
+    {
+      "timestamp": "2026-02-18T05:58:06.018365",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 5
     }
   ]
 }
