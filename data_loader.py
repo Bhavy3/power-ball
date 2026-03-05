@@ -82,13 +82,13 @@ def load_main_frequencies() -> pd.DataFrame:
         raise DataLoadError(f"Expected 40 numbers in frequencies, got {len(df)}")
     
     return df
-
+  
 
 def load_powerball_draws() -> pd.DataFrame:
     """
     Load Powerball draws data.
-    
-    Returns:
+
+    Returns:    
         DataFrame with columns: date, powerball
         
     Note:
