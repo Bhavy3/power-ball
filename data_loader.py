@@ -195,4 +195,4 @@ if __name__ == "__main__":
         print("\nAll tests passed!")
         
     except DataLoadError as e:
-        print(f"[ERROR] {e}")
+        print(f"[ERROR] {e}") 
