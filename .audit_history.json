@@ -2052,6 +2052,237 @@
       "three_plus_rate": 0.03,
       "four_plus_rate": 0.0,
       "ticket_count": 100
+    },
+    {
+      "run_id": "51e97e28",
+      "timestamp": "2026-03-09T17:17:58.985860",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:47:59.049860",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "eaadf554",
+      "timestamp": "2026-03-09T17:18:11.929937",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:48:13.569267",
+      "three_plus_rate": 0.033,
+      "four_plus_rate": 0.004,
+      "ticket_count": 1000
+    },
+    {
+      "run_id": "39f5b1ef",
+      "timestamp": "2026-03-09T17:18:30.401765",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:48:31.977844",
+      "three_plus_rate": 0.027,
+      "four_plus_rate": 0.002,
+      "ticket_count": 1000
+    },
+    {
+      "run_id": "2531a761",
+      "timestamp": "2026-03-09T17:18:37.051498",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:48:38.523631",
+      "three_plus_rate": 0.032,
+      "four_plus_rate": 0.001,
+      "ticket_count": 1000
+    },
+    {
+      "run_id": "a331956f",
+      "timestamp": "2026-03-09T17:18:45.955954",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:48:53.998882",
+      "three_plus_rate": 0.03483941208492107,
+      "four_plus_rate": 0.00326619488296135,
+      "ticket_count": 10000
+    },
+    {
+      "run_id": "19492004",
+      "timestamp": "2026-03-09T17:19:18.407677",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:26.468154",
+      "three_plus_rate": 0.03320631464344039,
+      "four_plus_rate": 0.001633097441480675,
+      "ticket_count": 10000
+    },
+    {
+      "run_id": "3b3e0c6b",
+      "timestamp": "2026-03-09T17:19:45.595016",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:45.669557",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "f3404ba1",
+      "timestamp": "2026-03-09T17:19:49.066333",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:49.142890",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "aaa03658",
+      "timestamp": "2026-03-09T17:19:51.449330",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:51.539871",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "3fc76744",
+      "timestamp": "2026-03-09T17:19:53.822348",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:53.872413",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "62f6564e",
+      "timestamp": "2026-03-09T17:19:56.403775",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:56.481325",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "06e53864",
+      "timestamp": "2026-03-09T17:19:59.243853",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:49:59.328398",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "52893a9b",
+      "timestamp": "2026-03-09T17:20:02.189312",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:02.255874",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 3
+    },
+    {
+      "run_id": "1f3b3ca6",
+      "timestamp": "2026-03-09T17:20:07.324438",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:07.416431",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "8190c8c0",
+      "timestamp": "2026-03-09T17:20:10.435887",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:10.507420",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "b39eacf3",
+      "timestamp": "2026-03-09T17:20:12.644012",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:12.718557",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "1bcf9f98",
+      "timestamp": "2026-03-09T17:20:14.661577",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:14.711772",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "5ad0b10d",
+      "timestamp": "2026-03-09T17:20:16.877135",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:16.937345",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "3b0ed898",
+      "timestamp": "2026-03-09T17:20:19.446194",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:19.518194",
+      "three_plus_rate": 0.0,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "ae7b4eae",
+      "timestamp": "2026-03-09T17:20:21.795746",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-09T11:50:21.863285",
+      "three_plus_rate": 0.5,
+      "four_plus_rate": 0.0,
+      "ticket_count": 2
+    },
+    {
+      "run_id": "3b288f94",
+      "timestamp": "2026-03-11T11:17:00.779512",
+      "success": true
+    },
+    {
+      "timestamp": "2026-03-11T05:47:01.250241",
+      "three_plus_rate": 0.02,
+      "four_plus_rate": 0.002,
+      "ticket_count": 500
     }
   ]
 }

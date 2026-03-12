@@ -74,8 +74,8 @@ The engine generates statistically-aligned combinations based on:
         self.composer = TicketComposer()
     
     def generate_ticket(self) -> LotteryTicket:
-        """Generate a single lottery ticket."""
-        return self.composer.compose()
+            """Generate a single lottery ticket."""
+            return self.composer.compose()
     
     def generate_tickets(self, count: int) -> List[LotteryTicket]:
         """Generate multiple unique tickets."""
