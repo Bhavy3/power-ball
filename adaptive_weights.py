@@ -4,7 +4,7 @@ Combines historical frequency data with user feedback signals.
 Implements the 85/15 weighting formula: Historical dominant, feedback subordinate.
 """
 
-from typing import Dict, Optional
+from typing import Dict
 from data_loader import load_main_frequencies, load_powerball_frequencies, get_frequency_weights
 from feedback_store import FeedbackStore
 
@@ -17,11 +17,11 @@ FEEDBACK_WEIGHT = 0.15
 class AdaptiveWeightCalculator:
     """
     Calculates adaptive weights combining historical data and user feedback.
-    
+
     Formula:
         Final Weight = 0.85 * Historical Distribution + 0.15 * User Feedback Signal
-        
-    Historical data ALWAYS dominates.
+
+    Historical data ALWAYS dominates, but feedback nudges the sampler when signals exist.
     """
     
     def __init__(self, feedback_store: FeedbackStore = None):
@@ -43,26 +43,43 @@ class AdaptiveWeightCalculator:
     def get_main_weights(self, feedback_days: int = 90) -> Dict[int, float]:
         """
         Get weights for main numbers.
-        
-        CRITICAL UPDATE:
-        - Removes outcome-based learning (Number Blindness).
-        - Returns purely historical frequency weights.
-        - No feedback adjustment for specific numbers.
+        Returns a blend of historical frequencies and recent feedback signals.
         """
-        # PURE BLINDNESS: Return historical weights only
-        # We do NOT look at which numbers won recently
-        return self.historical_main.copy()
+        feedback_signals = self.feedback_store.get_number_signals(days=feedback_days)
+        return self._blend_weights(self.historical_main, feedback_signals)
     
     def get_powerball_weights(self, feedback_days: int = 90) -> Dict[int, float]:
         """
         Get weights for Powerball.
-        
-        CRITICAL UPDATE:
-        - Removes outcome-based learning.
-        - Returns purely historical frequency weights.
+        Returns a blend of historical frequencies and recent feedback signals.
         """
-        # PURE BLINDNESS: Return historical weights only
-        return self.historical_pb.copy()
+        feedback_signals = self.feedback_store.get_powerball_signals(days=feedback_days)
+        return self._blend_weights(self.historical_pb, feedback_signals)
+
+    def _blend_weights(self, historical: Dict[int, float], feedback_signals: Dict[int, float]) -> Dict[int, float]:
+        """Blend historical weights with normalized feedback signals."""
+        if not feedback_signals:
+            return historical.copy()
+
+        total_signal = sum(feedback_signals.values())
+        if total_signal <= 0:
+            return historical.copy()
+
+        normalized_feedback = {
+            num: value / total_signal
+            for num, value in feedback_signals.items()
+        }
+
+        blended = {}
+        for num, hist_weight in historical.items():
+            feedback_weight = normalized_feedback.get(num, 0.0)
+            blended[num] = HISTORICAL_WEIGHT * hist_weight + FEEDBACK_WEIGHT * feedback_weight
+
+        total_blended = sum(blended.values())
+        if total_blended <= 0:
+            return historical.copy()
+
+        return {num: weight / total_blended for num, weight in blended.items()}
     
     def get_weight_comparison(self) -> dict:
         """
